@@ -14,10 +14,10 @@ const Contact: React.FC<IContactProps> = ({ collectInputs, collectTextArea, send
                 <S.Label htmlFor="fullname">Name</S.Label>
                 <S.Input id="fullname" onChange={collectInputs} name="fullname" type="text" />
                 <S.Label htmlFor="email">Email Address</S.Label>
-                <S.Input id="subject" onChange={collectInputs} name="subject" type="text" />
+                <S.Input id="email" onChange={collectInputs} name="email" type="text" />
                 <S.Label htmlFor="message">Message</S.Label>
                 <S.TextArea id="message" onChange={collectTextArea} name="message" />
-                <S.Button type="button">Submit</S.Button>
+                <S.Button onClick={sendData} type="button">Submit</S.Button>
             </S.Form>
             <S.Info></S.Info>
         </S.Contact>

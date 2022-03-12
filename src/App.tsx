@@ -25,7 +25,6 @@ function App() {
   const collectInputs = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
       setField((prevState) => {
-        debugger
         return { ...prevState, ...{ [e.target.name]: e.target.value }}
       });
     }
@@ -38,13 +37,15 @@ function App() {
   }
 
   const emailParams = {
-    emailjs.send("service_ttnubdh","template_hpzmp89", {
-
-    })
+    name: field.fullname,
+    email: field.email,
+    message: message
   }
 
   const sendData = () => {
-
+    emailjs.send("service_ttnubdh", "template_hpzmp89", emailParams, "user_QNcgtvnudxea7swDRoD84").then((response) => {
+      console.log(response.status);
+    })
   }
 
   return (
